@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t hrm-docker .
+
+script:
+  - docker run hrm-docker "R -q -e 'seq(1:10)'"
