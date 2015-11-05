@@ -11,7 +11,6 @@ RUN apt-get install -y \
   libudunits2-dev \
   udunits-bin \
   default-jdk \
-  xml2 \ 
   libcurl4-openssl-dev \
   libssl-dev
   
@@ -23,6 +22,7 @@ RUN apt-get install -y \
 # Install R packages
 RUN Rscript -e \
   'install.packages(c( \
+  "xml2" \
   "devtools" \
   ),repo="http://cran.rstudio.com/")'
 
