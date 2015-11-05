@@ -31,6 +31,9 @@ RUN R -e \
   "devtools" \
   ),repo="http://cran.rstudio.com/")'
 
+## Check available memory
+RUN free -gh
+
 ## Install bioconductor packages
 RUN R -e \
   'source("http://bioconductor.org/biocLite.R"); \
