@@ -22,7 +22,7 @@ RUN apt-get install -y \
 # Install R packages
 RUN Rscript -e \
   'install.packages(c( \
-  "xml2" \
+  "xml2", \
   "devtools" \
   ),repo="http://cran.rstudio.com/")'
 
