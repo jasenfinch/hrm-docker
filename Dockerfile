@@ -12,7 +12,7 @@ RUN apt-get install -y \
   udunits-bin \
   default-jdk \
   xml2 \ 
-  curl \
+  libcurl4-openssl-dev \
   libssl-dev
   
 # Install R
