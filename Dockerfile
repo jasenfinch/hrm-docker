@@ -31,8 +31,10 @@ RUN R -e \
   "devtools" \
   ),repo="http://cran.rstudio.com/")'
 
-## Check available memory
-RUN free -gh
+## Check and clear memory
+RUN free -mh
+&& sync & sysctl -w vm.drop_caches=3
+&& free -mh
 
 ## Install bioconductor packages
 RUN R -e \
