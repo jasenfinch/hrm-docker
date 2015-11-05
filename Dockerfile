@@ -5,34 +5,42 @@ MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 RUN apt-get update \
 && apt-get -y dist-upgrade 
 
-# Install external dependencies
+## Install external dependencies
 RUN apt-get install -y \
   libnetcdf-dev \
   libudunits2-dev \
   udunits-bin \
   default-jdk \
   libcurl4-openssl-dev \
-  libssl-dev
+  libssl-dev \
+  libxml2-dev
   
-# Install R
-RUN apt-get install -y \
+## Install R
+RUN sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list' \
+&& gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9 \
+&& gpg -a --export E084DAB9 | apt-key add - \
+&& apt-get update \
+&& apt-get install -y \
   r-base \
-  r-base-dev 
+  r-base-dev \
+&& apt-get clean
 
-# Install R packages
-RUN Rscript -e \
+## Install R packages
+RUN R -e \
   'install.packages(c( \
-  "xml2", \
   "devtools" \
   ),repo="http://cran.rstudio.com/")'
 
-# Install bioconductor packages
-RUN Rscript -e \
+## Install bioconductor packages
+RUN R -e \
   'source("http://bioconductor.org/biocLite.R"); \
-  biocLite("BiocInstaller");biocLite(c("mzR","impute"))' 
+  biocLite("BiocInstaller"); \
+  biocLite(c( \
+  "xcms", \
+  "impute"))' 
 
-# Install metabolomics packages from github
-RUN Rscript -e \
+## Install metabolomics packages from github
+RUN R -e \
   'library(devtools); \
   install_github("wilsontom/FIEmspro"); \
   install_github("jasenfinch/OrbiFIEproc"); \
