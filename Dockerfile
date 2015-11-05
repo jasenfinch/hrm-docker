@@ -32,9 +32,9 @@ RUN R -e \
   ),repo="http://cran.rstudio.com/")'
 
 ## Check and clear memory
-RUN free -mh \
-&& sync & sysctl -w vm.drop_caches=3 \
-&& free -mh 
+RUN free -mh 
+RUN sync & sysctl -w vm.drop_caches=3 
+RUN free -mh 
 
 ## Install bioconductor packages
 RUN R -e \
