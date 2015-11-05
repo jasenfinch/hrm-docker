@@ -5,17 +5,20 @@ MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 RUN apt-get update \
 && apt-get -y dist-upgrade 
 
-# Install R
-RUN apt-get install -y \
-  r-base \
-  r-base-dev 
-
 # Install external dependencies
 RUN apt-get install -y \
   libnetcdf-dev \
   libudunits2-dev \
   udunits-bin \
-  default-jdk 
+  default-jdk \
+  xml2 \ 
+  curl \
+  libssl-dev
+  
+# Install R
+RUN apt-get install -y \
+  r-base \
+  r-base-dev 
 
 # Install R packages
 RUN Rscript -e \
