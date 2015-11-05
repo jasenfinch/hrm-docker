@@ -4,4 +4,6 @@ services:
   - docker
 
 script:
-  - docker build -t hrm-docker .
+  - docker build -t jasenfinch/hrm-docker .
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push jasenfinch/hrm-docker

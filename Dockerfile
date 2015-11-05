@@ -31,11 +31,6 @@ RUN R -e \
   "devtools" \
   ),repo="http://cran.rstudio.com/")'
 
-## Check and clear memory
-RUN free -mh 
-RUN sync & sysctl -w vm.drop_caches=3 
-RUN free -mh 
-
 ## Install bioconductor packages
 RUN R -e \
   'source("http://bioconductor.org/biocLite.R"); \
