@@ -37,7 +37,8 @@ RUN R -e \
   biocLite("BiocInstaller"); \
   biocLite(c( \
   "xcms", \
-  "impute"))' 
+  "impute",
+  "CAMERA"))' 
 
 ## Install metabolomics packages from github
 RUN R -e \
