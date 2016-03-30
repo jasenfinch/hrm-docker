@@ -46,6 +46,6 @@ RUN R -e \
   install_github("wilsontom/FIEmspro"); \
   install_github("wilsontom/FIEtools"); \
   install_github("wilsontom/metRF"); \
-  install_github("jasenfinch/OrbiFIEproc"); \
+  install_github("jasenfinch/binneR"); \
   install_github("jasenfinch/OrbiFIEmisc"); \
   install_github("jasenfinch/mzAnnotation")' 
