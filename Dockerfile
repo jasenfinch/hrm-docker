@@ -41,7 +41,7 @@ RUN R -e \
   "CAMERA"))' 
 
 ## Check java settings for R
-sudo R CMD javareconf
+R CMD javareconf
 
 ## Install metabolomics packages from github
 RUN R -e \
