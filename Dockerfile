@@ -13,7 +13,8 @@ RUN apt-get install -y \
   default-jdk \
   libcurl4-openssl-dev \
   libssl-dev \
-  libxml2-dev
+  libxml2-dev \
+  ghostscript
   
 ## Install R
 RUN sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list' \
