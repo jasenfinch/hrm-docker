@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM r-base:latest
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
@@ -16,16 +16,6 @@ RUN apt-get install -y \
   libxml2-dev \
   ghostscript
   
-## Install R
-RUN sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list' \
-&& gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9 \
-&& gpg -a --export E084DAB9 | apt-key add - \
-&& apt-get update \
-&& apt-get install -y \
-  r-base \
-  r-base-dev \
-&& apt-get clean
-
 ## Install R packages
 RUN R -e \
   'install.packages(c( \
