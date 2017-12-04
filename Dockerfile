@@ -35,7 +35,7 @@ RUN R -e \
 ## Install bioconductor packages
 RUN R -e \
   'source("http://bioconductor.org/biocLite.R"); \
-  biocLite("BiocInstaller"); \
+  biocLite("BiocInstaller")'
 
 ## Check java settings for R
 RUN R CMD javareconf
@@ -43,5 +43,6 @@ RUN R CMD javareconf
 ## Install metabolomics packages from github
 RUN R -e \
   'library(devtools); \
-  install_github("jasenfinch/hrm")
-  hrm::hrmSetup()' 
+  install_github("jasenfinch/hrm"); \
+  hrm::hrmSetup()'  \
+  
