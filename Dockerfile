@@ -30,7 +30,7 @@ RUN sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/a
 RUN R -e \
   'install.packages(c( \
   "devtools" \
-  ),repo="http://cran.rstudio.com/")'
+  ),repo="http://cran.rstudio.com/",quiet = T)'
 
 ## Install bioconductor packages
 RUN R -e \
@@ -43,6 +43,6 @@ RUN R CMD javareconf
 ## Install metabolomics packages from github
 RUN R -e \
   'library(devtools); \
-  install_github("jasenfinch/hrm"); \
+  install_github("jasenfinch/hrm",quiet = T); \
   hrm::hrmSetup()'  \
   
