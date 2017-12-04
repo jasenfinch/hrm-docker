@@ -36,10 +36,6 @@ RUN R -e \
 RUN R -e \
   'source("http://bioconductor.org/biocLite.R"); \
   biocLite("BiocInstaller"); \
-  biocLite(c( \
-  "xcms", \
-  "impute",\
-  "CAMERA"))' 
 
 ## Check java settings for R
 RUN R CMD javareconf
@@ -47,9 +43,5 @@ RUN R CMD javareconf
 ## Install metabolomics packages from github
 RUN R -e \
   'library(devtools); \
-  install_github("wilsontom/FIEmspro"); \
-  install_github("wilsontom/FIEtools"); \
-  install_github("wilsontom/metRF"); \
-  install_github("jasenfinch/binneR"); \
-  install_github("jasenfinch/OrbiFIEmisc"); \
-  install_github("jasenfinch/mzAnnotation")' 
+  install_github("jasenfinch/hrm")
+  hrm::hrmSetup()' 
