@@ -11,19 +11,20 @@ RUN apt-get install -y \
   libudunits2-dev \
   udunits-bin \
   default-jdk \
-  libcurl4-openssl-dev \
   libssl-dev \
   libxml2-dev \
+  pandoc \
+  pandoc-citeproc \
   ghostscript
   
 ## Install R packages
-RUN R -e \
+RUN Rscript -e \
   'install.packages(c( \
   "devtools" \
   ),repo="http://cran.rstudio.com/",quiet = T)'
 
 ## Install bioconductor packages
-RUN R -e \
+RUN Rscript -e \
   'source("http://bioconductor.org/biocLite.R"); \
   biocLite("BiocInstaller")'
 
@@ -31,8 +32,8 @@ RUN R -e \
 RUN R CMD javareconf
 
 ## Install metabolomics packages from github
-RUN R -e \
-  'library(devtools); \
-  install_github("jasenfinch/hrm",quiet = T); \
-  hrm::hrmSetup()'  \
-  
+RUN Rscript -e \
+  'devtools::install_github("jasenfinch/hrm",quiet = T)'
+
+RUN Rscript -e \
+  'hrm::hrmSetup()'
