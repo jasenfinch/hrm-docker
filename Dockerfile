@@ -20,20 +20,15 @@ RUN apt-get install -y \
 ## Install R packages
 RUN Rscript -e \
   'install.packages(c( \
-  "devtools" \
+  "remotes" \
   ),repo="http://cran.rstudio.com/",quiet = T)'
-
-## Install bioconductor packages
-RUN Rscript -e \
-  'source("http://bioconductor.org/biocLite.R"); \
-  biocLite("BiocInstaller")'
 
 ## Check java settings for R
 RUN R CMD javareconf
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
-  'devtools::install_github("jasenfinch/hrm",quiet = T)'
+  'remotes::install_github("jasenfinch/hrm",quiet = T)'
 
 RUN Rscript -e \
   'hrm::hrmSetup()'
