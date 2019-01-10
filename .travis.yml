@@ -7,3 +7,8 @@ script:
   - docker build -t jasenfinch/hrm-docker .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push jasenfinch/hrm-docker
+  
+notifications:
+  email:
+    on_success: change
+    on_failure: change
