@@ -20,7 +20,7 @@ RUN apt-get install -y \
 ## Install R packages
 RUN Rscript -e \
   'install.packages(c( \
-  "remotes" \
+  "devtools" \
   ),repo="http://cran.rstudio.com/",quiet = T)'
 
 ## Check java settings for R
@@ -28,7 +28,7 @@ RUN R CMD javareconf
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
-  'remotes::install_github("jasenfinch/hrm",quiet = T)'
+  'devtools::install_github("jasenfinch/hrm",quiet = T)'
 
 RUN Rscript -e \
   'hrm::hrmSetup()'
