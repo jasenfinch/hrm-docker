@@ -16,12 +16,6 @@ RUN apt-get install -y \
   pandoc \
   pandoc-citeproc \
   ghostscript
-  
-## Install R packages
-RUN Rscript -e \
-  'install.packages(c( \
-  "devtools" \
-  ),repo="http://cran.rstudio.com/",quiet = T)'
 
 ## Check java settings for R
 RUN R CMD javareconf
