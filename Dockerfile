@@ -11,8 +11,6 @@ RUN apt-get install -y \
   libudunits2-dev \
   udunits-bin \
   default-jdk \
-  libssl-dev \
-  libxml2-dev \
   pandoc \
   pandoc-citeproc \
   ghostscript
