@@ -28,7 +28,7 @@ RUN R CMD javareconf
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
-  'devtools::install_github("jasenfinch/hrm",quiet = T)'
+  'devtools::install_github("jasenfinch/hrm")'
 
 RUN Rscript -e \
   'hrm::hrmSetup()'
