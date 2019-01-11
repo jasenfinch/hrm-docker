@@ -1,4 +1,4 @@
-FROM rocker/tidyverse
+FROM rocker/tidyverse:latest
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
