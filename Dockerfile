@@ -2,6 +2,8 @@ FROM rocker/tidyverse:latest
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
+ENV GITHUB_PAT $GITHUB_PAT
+
 RUN apt-get update \
 && apt-get -y dist-upgrade 
 

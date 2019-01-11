@@ -4,7 +4,7 @@ services:
   - docker
 
 script:
-  - docker build --build-arg GITHUB_PAT=$GITHUB_PAT -t jasenfinch/hrm-docker .
+  - docker build -t jasenfinch/hrm-docker .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push jasenfinch/hrm-docker
   
