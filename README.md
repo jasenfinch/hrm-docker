@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/jasenfinch/HRM-docker.svg?branch=master)](https://travis-ci.org/jasenfinch/HRM-docker)
+# hrm-docker
 
-# HRM-docker
-A docker container for high resolution metabolomics analysis in R
+[![Build Status](https://travis-ci.org/jasenfinch/hrm-docker.svg?branch=master)](https://travis-ci.org/jasenfinch/hrm-docker)
+
+A docker container for the [hrm](https://github.com/jasenfinch/hrm) package for high resolution metabolomics analyses
