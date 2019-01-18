@@ -28,7 +28,7 @@ RUN Rscript -e \
   
 ## Install metabolomics packages from github
 RUN Rscript -e \
-  'devtools::install_github("jasenfinch/hrm@devel")'
+  'devtools::install_github("jasenfinch/hrm")'
 
 RUN Rscript -e \
   'hrm::hrmSetup()'
