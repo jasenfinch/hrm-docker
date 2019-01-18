@@ -21,13 +21,14 @@ RUN apt-get install -y \
 ## Check java settings for R
 RUN R CMD javareconf
 
+## Install Bioconductor & update R packages
+RUN Rscript -e \
+  'install.packages("BiocManager"); \
+  BiocManager::install(ask = FALSE)'
+  
 ## Install metabolomics packages from github
 RUN Rscript -e \
   'devtools::install_github("jasenfinch/hrm@devel")'
-
-## Update R packages
-RUN Rscript -e \
-  'BiocManager::install(ask = FALSE)'
 
 RUN Rscript -e \
   'hrm::hrmSetup()'
