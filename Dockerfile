@@ -16,7 +16,8 @@ RUN apt-get install -y \
   pandoc \
   pandoc-citeproc \
   ghostscript \
-  libopenbabel-dev
+  libopenbabel-dev \
+  libgit2-dev
 
 ## Check java settings for R
 RUN R CMD javareconf
