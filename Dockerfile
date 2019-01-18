@@ -24,5 +24,9 @@ RUN R CMD javareconf
 RUN Rscript -e \
   'devtools::install_github("jasenfinch/hrm@devel")'
 
+## Update R packages
+RUN Rscript -e \
+  'BiocManager::install(ask = FALSE)'
+
 RUN Rscript -e \
   'hrm::hrmSetup()'
