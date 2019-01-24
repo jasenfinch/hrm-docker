@@ -27,7 +27,7 @@ RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-
 
 RUN apt-get update
 
-RUN apt-get install -y r-base
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
 
 ## Check java settings for R
 RUN R CMD javareconf
