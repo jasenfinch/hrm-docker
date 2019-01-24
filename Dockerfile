@@ -4,11 +4,16 @@ MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
 ARG GITHUB_PAT
 
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+
+RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
+
 RUN apt-get update \
 && apt-get -y dist-upgrade 
 
 ## Install external dependencies
 RUN apt-get install -y \
+  r-base \
   libnetcdf-dev \
   libudunits2-dev \
   udunits-bin \
