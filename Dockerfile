@@ -1,4 +1,4 @@
-FROM rocker/tidyverse:latest
+FROM ubuntu:latest
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
