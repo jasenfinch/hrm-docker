@@ -9,7 +9,7 @@ RUN apt-get update \
 
 ## Install external dependencies
 RUN apt-get install -y \
-  add-apt-repository \
+  software-properties-common \
   libnetcdf-dev \
   libudunits2-dev \
   udunits-bin \
