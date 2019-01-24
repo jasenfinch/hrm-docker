@@ -32,9 +32,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
 ## Check java settings for R
 RUN R CMD javareconf
 
-## Install Bioconductor & update R packages
+## Install Bioconductor, devtools & update R packages
 RUN Rscript -e \
-  'install.packages("BiocManager"); \
+  'install.packages(c("BiocManager","devtools")); \
   BiocManager::install(ask = FALSE)'
   
 ## Install metabolomics packages from github
