@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
