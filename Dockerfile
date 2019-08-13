@@ -1,4 +1,4 @@
-FROM jasenfinch/ubuntu-r:latest
+FROM jasenfinch/ubuntu-r-xcms:latest
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
@@ -6,9 +6,6 @@ ARG GITHUB_PAT
 
 ## Install external dependencies
 RUN apt-get install -y \
-  libnetcdf-dev \
-  libudunits2-dev \
-  udunits-bin \
   pandoc \
   pandoc-citeproc \
   ghostscript \
