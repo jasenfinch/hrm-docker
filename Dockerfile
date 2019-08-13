@@ -13,7 +13,8 @@ RUN apt-get install -y \
   pandoc-citeproc \
   ghostscript \
   libopenbabel-dev \
-  libxml2-dev
+  mesa-common-dev \
+  libglu1-mesa-dev
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
