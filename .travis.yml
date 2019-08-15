@@ -1,14 +1,15 @@
 sudo: required
-
 services:
-  - docker
+- docker
 
 script:
-  - docker build --build-arg GITHUB_PAT=${GITHUB_PAT} -t jasenfinch/hrm-docker .
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push jasenfinch/hrm-docker
-  
+- docker build --build-arg GITHUB_PAT=${GITHUB_PAT} -t jasenfinch/hrm-docker .
+- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+- docker push jasenfinch/hrm-docker
+
 notifications:
-  email:
+  slack:
+    rooms:
+      secure: rRPlwkXiTlpC9+DVvSikckvj+nS9jOrN1E/yRTh8DtsmQZvnjk5ZO9rp1tJPNOB6QWlc9OIanzj0R58OBnKNqsbiYzBbuNx6Ttir9RpMj22pvBnMhDQqpGrtiAjpJUpdOGbd+ND/AvnRwxRi9VV9kbvFzVHs6SdvFT07V7YgwIUnnBCxWbbKhb6Q+YnVWnAsjAK5gCC0UG2rPffQgG6lnvVe6wc3iF38xY37EA+ORsOsKJ5dSr79d3aQygOvuh/okRF4cEynEyK1vRFTvUysUbbbq8d/ykAXDRVjeQpOnGm9UWv/kjaywEioEHa/X4gDqFDGS6KWnZQM5SQ/MGMAkJ30GXvJVpTpf8xJmdzMNhIvRjvTAGEWvwdGWr80bbcfpBeADJl+DVHBPwMSfD274delKePSM61iygJ4QpmjewaIkBKcgptPNOHCuhsPKNH7htG2RqFBcuKnxVaZhVqI0Bmh0mgcNNSbReWIcsA4rGm9A01zp1QN+1jeO2eKIg2kLrCvrI1r3lXUnjOz9U+ekHH4FM65XxJsieTQNZaNaWx6JwI4+IR9meRr1+eb78IbFyZ/657ydgfKYdUd/LunXZOoexvpClvMoD4srvlhgkv7verpEHMuA+Dc5SKqH0tpA2jwADwqzSqMQvQ2TpSQI8Wf80EN4vgLcYF7UzBAtD4=
     on_success: change
     on_failure: change
