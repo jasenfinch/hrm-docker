@@ -12,7 +12,8 @@ RUN apt-get install -y \
   libopenbabel-dev \
   mesa-common-dev \
   libglu1-mesa-dev \
-  libfreetype6-dev
+  libfreetype6-dev \
+  libhdf5-dev
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
