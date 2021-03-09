@@ -1,4 +1,4 @@
-FROM jasenfinch/ubuntu-r-xcms:latest
+FROM docker.pkg.github.com/jasenfinch/ubuntu-r-xcms/ubuntu_r_xcms:latest
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
