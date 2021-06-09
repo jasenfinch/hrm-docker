@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/jasenfinch/hrm-docker/ubuntu-r-xcms
+FROM ghcr.io/jasenfinch/ubuntu-r-xcms
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 

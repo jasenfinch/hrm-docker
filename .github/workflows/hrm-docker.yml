@@ -65,10 +65,10 @@ jobs:
             IMAGE_ID=ghcr.io/${{ github.actor }}/ubuntu-r-xcms
           
             # Set version to current date
-            VERSION=
+            VERSION=${{ steps.date.outputs.date }}
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
-            docker tag ubuntu-r-xcms $IMAGE_ID:$VERSION
+            docker tag ubuntu-r=xcms $IMAGE_ID:$VERSION
             docker tag ubuntu-r-xcms $IMAGE_ID:latest
             docker push $IMAGE_ID:$VERSION
             docker push $IMAGE_ID:latest
