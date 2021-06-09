@@ -21,6 +21,10 @@ jobs:
 
         - name: Log into registry
           run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+        
+        - name: Get current date
+          id: date
+          run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
         - name: Build image
           run: docker build . --build-arg GITHUB_PAT=${{ secrets.GITHUB_TOKEN }} --file ubuntu-r/Dockerfile --tag ubuntu-r
@@ -49,6 +53,10 @@ jobs:
         - name: Log into registry
           run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
       
+        - name: Get current date
+          id: date
+          run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        
         - name: Build image
           run: docker build . --build-arg GITHUB_PAT=${{ secrets.GITHUB_TOKEN }} --file ubuntu-r-xcms/Dockerfile --tag ubuntu-r-xcms
 
@@ -75,6 +83,10 @@ jobs:
 
         - name: Log into registry
           run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+        
+        - name: Get current date
+          id: date
+          run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
         - name: Build image
           run: docker build . --build-arg GITHUB_PAT=${{ secrets.GITHUB_TOKEN }} --file hrm-docker/Dockerfile --tag hrm-docker
