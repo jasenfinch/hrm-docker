@@ -37,7 +37,7 @@ jobs:
             [ "$VERSION" == "master" ] && VERSION=latest
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
-            docker tag image $IMAGE_ID:$VERSION
+            docker tag ubuntu-r $IMAGE_ID:$VERSION
             docker push $IMAGE_ID:$VERSION
       
     ubuntu-r-xcms:
@@ -66,7 +66,7 @@ jobs:
             [ "$VERSION" == "master" ] && VERSION=latest
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
-            docker tag image $IMAGE_ID:$VERSION
+            docker tag ubuntu-r-xcms $IMAGE_ID:$VERSION
             docker push $IMAGE_ID:$VERSION
   
     hrm-docker:
@@ -95,5 +95,5 @@ jobs:
             [ "$VERSION" == "master" ] && VERSION=latest
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
-            docker tag image $IMAGE_ID:$VERSION
+            docker tag hrm-docker $IMAGE_ID:$VERSION
             docker push $IMAGE_ID:$VERSION
