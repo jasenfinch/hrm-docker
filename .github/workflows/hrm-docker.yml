@@ -38,7 +38,9 @@ jobs:
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
             docker tag ubuntu-r $IMAGE_ID:$VERSION
+            docker tag ubuntu-r $IMAGE_ID:latest
             docker push $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:latest
       
     ubuntu-r-xcms:
       needs: ubuntu-r
@@ -66,7 +68,9 @@ jobs:
             VERSION=
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
-            docker tag ubuntu-r $IMAGE_ID:$VERSION
+            docker tag ubuntu-r-xcms $IMAGE_ID:$VERSION
+            docker tag ubuntu-r-xcms $IMAGE_ID:latest
+            docker push $IMAGE_ID:$VERSION
             docker push $IMAGE_ID:latest
   
     hrm-docker:
@@ -96,4 +100,6 @@ jobs:
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
             docker tag hrm-docker $IMAGE_ID:$VERSION
+            docker tag hrm-docker $IMAGE_ID:latest
             docker push $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:latest
