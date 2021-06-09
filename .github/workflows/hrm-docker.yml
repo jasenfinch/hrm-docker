@@ -27,7 +27,7 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$ubuntu-r
+            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/ubuntu-r
           
             # Change all uppercase to lowercase
             IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
@@ -58,7 +58,7 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$ubuntu-r-xcms
+            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/ubuntu-r-xcms
           
             # Change all uppercase to lowercase
             IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
@@ -89,7 +89,7 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$hrm-docker
+            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/hrm-docker
           
             # Change all uppercase to lowercase
             IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
