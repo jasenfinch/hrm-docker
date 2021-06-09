@@ -33,8 +33,6 @@ jobs:
             IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
             # Set version to current date
             VERSION=${{ steps.date.outputs.date }}
-            # Use Docker `latest` tag convention
-            [ "$VERSION" == "master" ] && VERSION=latest
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
             docker tag ubuntu-r $IMAGE_ID:$VERSION
@@ -62,8 +60,6 @@ jobs:
             IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
             # Set version to current date
             VERSION=${{ steps.date.outputs.date }}
-            # Use Docker `latest` tag convention
-            [ "$VERSION" == "master" ] && VERSION=latest
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
             docker tag ubuntu-r-xcms $IMAGE_ID:$VERSION
@@ -91,8 +87,6 @@ jobs:
             IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
             # Set version to current date
             VERSION=${{ steps.date.outputs.date }}
-            # Use Docker `latest` tag convention
-            [ "$VERSION" == "master" ] && VERSION=latest
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
             docker tag hrm-docker $IMAGE_ID:$VERSION
