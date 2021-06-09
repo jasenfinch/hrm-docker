@@ -31,7 +31,7 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=ghcr.io/ubuntu-r
+            IMAGE_ID=ghcr.io/${{ github.actor }}/ubuntu-r
           
             # Set version to current date
             VERSION=${{ steps.date.outputs.date }}
@@ -60,7 +60,7 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=ghcr.io/ubuntu-r-xcms
+            IMAGE_ID=ghcr.io/${{ github.actor }}/ubuntu-r-xcms
           
             # Set version to current date
             VERSION=
@@ -89,7 +89,7 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=ghcr.io/hrm-docker
+            IMAGE_ID=ghcr.io/${{ github.actor }}/hrm-docker
           
             # Set version to current date
             VERSION=${{ steps.date.outputs.date }}
