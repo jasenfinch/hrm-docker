@@ -20,7 +20,7 @@ jobs:
         - uses: actions/checkout@v2
 
         - name: Log into registry
-          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
         
         - name: Get current date
           id: date
@@ -31,10 +31,8 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/ubuntu-r
+            IMAGE_ID=ghcr.io/ubuntu-r
           
-            # Change all uppercase to lowercase
-            IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
             # Set version to current date
             VERSION=${{ steps.date.outputs.date }}
             echo IMAGE_ID=$IMAGE_ID
@@ -51,7 +49,7 @@ jobs:
         - uses: actions/checkout@v2
 
         - name: Log into registry
-          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       
         - name: Get current date
           id: date
@@ -62,16 +60,14 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/ubuntu-r-xcms
+            IMAGE_ID=ghcr.io/ubuntu-r-xcms
           
-            # Change all uppercase to lowercase
-            IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
             # Set version to current date
-            VERSION=${{ steps.date.outputs.date }}
+            VERSION=
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
-            docker tag ubuntu-r-xcms $IMAGE_ID:$VERSION
-            docker push $IMAGE_ID:$VERSION
+            docker tag ubuntu-r $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:latest
   
     hrm-docker:
       needs: ubuntu-r-xcms
@@ -82,7 +78,7 @@ jobs:
         - uses: actions/checkout@v2
 
         - name: Log into registry
-          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
         
         - name: Get current date
           id: date
@@ -93,10 +89,8 @@ jobs:
 
         - name: Push image
           run: |
-            IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/hrm-docker
+            IMAGE_ID=ghcr.io/hrm-docker
           
-            # Change all uppercase to lowercase
-            IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
             # Set version to current date
             VERSION=${{ steps.date.outputs.date }}
             echo IMAGE_ID=$IMAGE_ID
