@@ -43,6 +43,7 @@ jobs:
             docker push $IMAGE_ID:$VERSION
       
     ubuntu-r-xcms:
+      needs: ubuntu-r
 
       runs-on: ubuntu-20.04
 
@@ -73,6 +74,7 @@ jobs:
             docker push $IMAGE_ID:$VERSION
   
     hrm-docker:
+      needs: ubuntu-r-xcms
 
       runs-on: ubuntu-20.04
 
