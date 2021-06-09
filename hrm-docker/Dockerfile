@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/jasenfinch/ubuntu-r-xcms/ubuntu_r_xcms:latest
+FROM docker.pkg.github.com/jasenfinch/hrm-docker/ubuntu-r-xcms:latest
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
@@ -20,3 +20,5 @@ RUN apt-get install -y \
 ## Install metabolomics packages from github
 RUN Rscript -e \
   'devtools::install_github("jasenfinch/hrm")'
+
+RUN chmod -R 777 /R
