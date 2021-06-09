@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/jasenfinch/hrm-docker/ubuntu-r:latest
+FROM docker.pkg.github.com/jasenfinch/hrm-docker/ubuntu-r
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
