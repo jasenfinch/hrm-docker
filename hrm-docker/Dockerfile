@@ -20,7 +20,8 @@ RUN apt-get install -y \
   mono-runtime
 
 ## Install metabolomics packages from github
-RUN Rscript -e \
-  'renv::install("jasenfinch/hrm")'
+#RUN Rscript -e 'renv::install(c("bioc::KEGGREST","jasenfinch/composition"))'
+RUN Rscript -e 'renv::install(c("bioc::KEGGREST","bioc::rawrr","bioc::FELLA"))'
+RUN Rscript -e 'renv::install("jasenfinch/hrm")'
 
 RUN chmod -R 777 /R
