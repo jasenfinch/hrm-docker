@@ -16,7 +16,8 @@ RUN apt-get install -y \
   libfontconfig1-dev \
   libtiff5-dev \
   libcairo2-dev \
-  libsodium-dev
+  libsodium-dev \
+  mono-runtime
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
