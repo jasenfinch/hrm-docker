@@ -21,6 +21,6 @@ RUN apt-get install -y \
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
-  'devtools::install_github("jasenfinch/hrm")'
+  'renv::install("jasenfinch/hrm")'
 
 RUN chmod -R 777 /R

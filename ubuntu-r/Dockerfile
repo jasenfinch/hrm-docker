@@ -27,11 +27,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
 RUN mkdir /R
 RUN echo "R_LIBS=/R" >> /usr/lib/R/etc/Renviron.site
 
+## Install renv
+RUN Rscript -e 'install.packages("renv")'
 
 ## Install Bioconductor, devtools & update R packages
 RUN Rscript -e \
-'install.packages(c("BiocManager","devtools","tidyverse")); \
-  BiocManager::install(ask = FALSE)'
+'renv::install(c("BiocManager","devtools","tidyverse"))'
 
 RUN chmod -R 777 /R
 

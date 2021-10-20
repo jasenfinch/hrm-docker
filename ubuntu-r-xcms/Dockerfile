@@ -10,6 +10,6 @@ RUN apt-get install -y \
   libhdf5-dev
 
 RUN Rscript -e \
-  'BiocManager::install("xcms")'
+  'renv::install("bioc::xcms")'
 
 RUN chmod -R 777 /R
