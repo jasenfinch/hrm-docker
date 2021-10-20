@@ -15,7 +15,8 @@ RUN apt-get install -y \
   libfreetype6-dev \
   libfontconfig1-dev \
   libtiff5-dev \
-  libcairo2-dev
+  libcairo2-dev \
+  libsodium-dev
 
 ## Install metabolomics packages from github
 RUN Rscript -e \
