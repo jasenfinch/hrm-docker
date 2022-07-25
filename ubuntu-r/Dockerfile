@@ -6,15 +6,22 @@ RUN apt-get update \
 && apt-get -y dist-upgrade 
 
 ## Install external dependencies
-RUN apt-get install -y \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
   software-properties-common \
   libssl-dev \
   libgit2-dev \
   cargo \
   libxml2-dev \
   libx11-dev \
-  libcurl4-openssl-dev
-
+  libcurl4-openssl-dev \
+  libfontconfig1-dev \
+  libharfbuzz-dev \
+  libfribidi-dev \
+  libfreetype6-dev \
+  libpng-dev \
+  libtiff5-dev \
+  libjpeg-dev
+  
 ## Install R
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'

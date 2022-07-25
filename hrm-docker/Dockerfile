@@ -12,9 +12,6 @@ RUN apt-get install -y \
   libopenbabel-dev \
   mesa-common-dev \
   libglu1-mesa-dev \
-  libfreetype6-dev \
-  libfontconfig1-dev \
-  libtiff5-dev \
   libcairo2-dev \
   libsodium-dev \
   mono-runtime
