@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 MAINTAINER "Jasen Finch" jsf9@aber.ac.uk
 
@@ -8,6 +8,7 @@ RUN apt-get update \
 ## Install external dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
   software-properties-common \
+  wget \
   libssl-dev \
   libgit2-dev \
   cargo \
@@ -23,9 +24,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
   libjpeg-dev
   
 ## Install R
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
-
+RUN wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+RUN add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 RUN apt-get update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
