@@ -14,11 +14,16 @@ RUN apt-get install -y \
   libglu1-mesa-dev \
   libcairo2-dev \
   libsodium-dev \
-  mono-runtime
+  mono-runtime \
+  libeigen3-dev \
+  default-jdk
 
 ## Install metabolomics packages from github
-#RUN Rscript -e 'renv::install(c("bioc::KEGGREST","jasenfinch/composition"))'
-RUN Rscript -e 'renv::install(c("bioc::KEGGREST","bioc::rawrr","bioc::FELLA"))'
-RUN Rscript -e 'renv::install("jasenfinch/hrm")'
+RUN Rscript -e 'renv::install(c("bioc::KEGGREST", \
+                                "bioc::rawrr", \
+                                "bioc::FELLA", \
+                                "bioc::ChemmineOB", \
+                                "jasenfinch/cheminf", \
+                                "jasenfinch/hrm"))'
 
 RUN chmod -R 777 /R
