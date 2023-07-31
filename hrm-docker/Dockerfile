@@ -16,14 +16,12 @@ RUN apt-get install -y \
   libsodium-dev \
   mono-runtime \
   libeigen3-dev \
-  default-jdk
+  default-jdk \
+  git
+
+RUN Rscript -e 'remotes::install_github("jasenfinch/renv@auth")'
 
 ## Install metabolomics packages from github
-RUN Rscript -e 'renv::install(c("bioc::KEGGREST", \
-                                "bioc::rawrr", \
-                                "bioc::FELLA", \
-                                "bioc::ChemmineOB", \
-                                "jasenfinch/cheminf", \
-                                "jasenfinch/hrm"))'
+RUN Rscript -e 'renv::install("jasenfinch/hrm")'
 
 RUN chmod -R 777 /R
