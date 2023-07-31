@@ -25,6 +25,9 @@ RUN Rscript -e 'remotes::install_github("jasenfinch/renv@auth")'
 RUN Rscript -e 'renv::install(c( \
   "jasenfinch/BiocParallel.FutureParam", \
   "wilsontom/msconverteR", \
+  "aberHRML/binneR", \
+  "jasenfinch/profile", \
+  "jasenfinch/missForest", \
   "jasenfinch/projecttemplates", \
   "jasdumas/gramr", \
   "benmarwick/wordcountaddin", \
