@@ -19,12 +19,12 @@ RUN apt-get install -y \
   default-jdk \
   git
 
-RUN Rscript -e 'remotes::install_github("jasenfinch/renv@auth")'
+#RUN Rscript -e 'remotes::install_github("jasenfinch/renv@auth")'
 
 ## Install metabolomics packages from github
 RUN Rscript -e 'renv::install(c( \
   "jasenfinch/BiocParallel.FutureParam", \
-  "jasenfinch/projecttemplates" \
+  "jasenfinch/projecttemplates", \
   "jasenfinch/hrm"))'
 
 RUN chmod -R 777 /R
