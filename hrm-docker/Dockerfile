@@ -27,6 +27,7 @@ RUN Rscript -e 'renv::install(c( \
   "jasenfinch/projecttemplates", \
   "jasdumas/gramr", \
   "benmarwick/wordcountaddin", \
+  "jasenfinch/jfmisc", \
   "jasenfinch/hrm"))'
 
 RUN chmod -R 777 /R
