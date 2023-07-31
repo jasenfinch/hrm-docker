@@ -24,6 +24,7 @@ RUN Rscript -e 'remotes::install_github("jasenfinch/renv@auth")'
 ## Install metabolomics packages from github
 RUN Rscript -e 'renv::install(c( \
   "jasenfinch/BiocParallel.FutureParam", \
+  "wilsontom/msconverteR", \
   "jasenfinch/projecttemplates", \
   "jasdumas/gramr", \
   "benmarwick/wordcountaddin", \
