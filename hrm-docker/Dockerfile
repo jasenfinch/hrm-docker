@@ -25,6 +25,8 @@ RUN Rscript -e 'remotes::install_github("jasenfinch/renv@auth")'
 RUN Rscript -e 'renv::install(c( \
   "jasenfinch/BiocParallel.FutureParam", \
   "jasenfinch/projecttemplates", \
+  "jasdumas/gramr", \
+  "benmarwick/wordcountaddin", \
   "jasenfinch/hrm"))'
 
 RUN chmod -R 777 /R
