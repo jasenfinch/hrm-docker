@@ -30,14 +30,19 @@ RUN Rscript -e 'renv::install(c( \
   "jasenfinch/metabolyseR", \
   "aberHRML/mzAnnotation", \
   "aberHRML/assignments", \
-  "aberHRML/classyfireR"
+  "aberHRML/classyfireR", \
   "jasenfinch/cheminf", \
+  "jasenfinch/construction", \
   "jasenfinch/missForest", \
-  "davidsjoberg/ggsankey",
+  "davidsjoberg/ggsankey", \
+  "jasenfinch/grover", \
+  "jasenfinch/riches", \
+  "jasenfinch/metaboMisc", \
   "jasenfinch/projecttemplates", \
   "jasdumas/gramr", \
   "benmarwick/wordcountaddin", \
   "jasenfinch/jfmisc", \
+  "jasenfinch/metaboWorkflows", \
   "jasenfinch/hrm"))'
 
 RUN chmod -R 777 /R
