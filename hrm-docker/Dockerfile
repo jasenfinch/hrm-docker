@@ -26,7 +26,7 @@ RUN Rscript -e 'renv::install(c( \
   "jasenfinch/BiocParallel.FutureParam", \
   "wilsontom/msconverteR", \
   "aberHRML/binneR", \
-  "jasenfinch/profile", \
+  "jasenfinch/profilePro", \
   "jasenfinch/missForest", \
   "jasenfinch/projecttemplates", \
   "jasdumas/gramr", \
