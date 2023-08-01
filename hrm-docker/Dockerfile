@@ -27,7 +27,13 @@ RUN Rscript -e 'renv::install(c( \
   "wilsontom/msconverteR", \
   "aberHRML/binneR", \
   "jasenfinch/profilePro", \
+  "jasenfinch/metabolyseR", \
+  "aberHRML/mzAnnotation", \
+  "aberHRML/assignments", \
+  "aberHRML/classyfireR"
+  "jasenfinch/cheminf", \
   "jasenfinch/missForest", \
+  "davidsjoberg/ggsankey",
   "jasenfinch/projecttemplates", \
   "jasdumas/gramr", \
   "benmarwick/wordcountaddin", \
