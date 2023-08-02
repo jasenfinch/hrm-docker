@@ -9,6 +9,7 @@ RUN apt-get update \
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
   software-properties-common \
   wget \
+  curl \
   libssl-dev \
   libgit2-dev \
   cargo \
@@ -38,8 +39,7 @@ RUN echo "R_LIBS=/R" >> /usr/lib/R/etc/Renviron.site
 RUN Rscript -e 'install.packages("renv")'
 
 ## Install Bioconductor, devtools & update R packages
-RUN Rscript -e \
-'renv::install(c("BiocManager","devtools","tidyverse"))'
+RUN Rscript -e 'renv::install(c("BiocManager","devtools","tidyverse"))'
 
 RUN chmod -R 777 /R
 
