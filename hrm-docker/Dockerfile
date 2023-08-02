@@ -19,30 +19,7 @@ RUN apt-get install -y \
   default-jdk \
   git
 
-RUN Rscript -e 'remotes::install_github("jasenfinch/renv@auth")'
-
 ## Install metabolomics packages from github
-RUN Rscript -e 'renv::install(c( \
-  "jasenfinch/BiocParallel.FutureParam", \
-  "wilsontom/msconverteR", \
-  "aberHRML/binneR", \
-  "jasenfinch/profilePro", \
-  "jasenfinch/metabolyseR", \
-  "aberHRML/mzAnnotation", \
-  "aberHRML/assignments", \
-  "aberHRML/classyfireR", \
-  "jasenfinch/cheminf", \
-  "jasenfinch/construction", \
-  "jasenfinch/missForest", \
-  "davidsjoberg/ggsankey", \
-  "jasenfinch/grover", \
-  "jasenfinch/riches", \
-  "jasenfinch/metaboMisc", \
-  "jasenfinch/projecttemplates", \
-  "jasdumas/gramr", \
-  "benmarwick/wordcountaddin", \
-  "jasenfinch/jfmisc", \
-  "jasenfinch/metaboWorkflows", \
-  "jasenfinch/hrm"))'
+RUN Rscript -e 'renv::install("jasenfinch/hrm")'
 
 RUN chmod -R 777 /R
